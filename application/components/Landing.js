@@ -34,21 +34,18 @@ class Landing extends Component{
     return(
       <View style={styles.container}>
       <View style={styles.container}>
-        <Image
-          style={styles.backgroundImage}
-          source={require('../assets/images/welcome.png')}
-        />
+
       </View>
         <View style={globals.flexCenter}>
         <Image
           style={styles.logo}
-          source={{uri:Logo}}
+          source={require('../assets/images/Cross-Pattee-Heraldry.svg.png')}
         />
         <Text style={[globals.lightText, globals.h2, globals.mb2]}>
-          assemblies
+        SVSP
         </Text>
         <Text style={[globals.lightText, globals.h4]}>
-          Where Developers Connect
+          Training Log
         </Text>
       </View>
       <TouchableOpacity
@@ -57,7 +54,7 @@ class Landing extends Component{
        >
          <Icon name='person' size={36} color='white' />
          <Text style={globals.buttonText}>
-           Go to Dashboard
+           Go to Training Divisions
          </Text>
        </TouchableOpacity>
 

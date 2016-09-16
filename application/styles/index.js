@@ -422,17 +422,18 @@ export const landingStyles = StyleSheet.create({
     position: 'absolute',
     right: 0,
     top: 0,
+    backgroundColor: 'red',
   },
   loginButton: {
     bottom: 80,
   },
   backgroundImage: {
-    height: deviceHeight,
-    width: deviceWidth
+    height: 100,
+    width: 100
   },
   logo: {
-    height: 90,
-    width: 90
+    height: 240,
+    width: 240
   },
 });
 
@@ -672,7 +673,7 @@ export const globals = StyleSheet.create({
   },
   button: {
     alignItems: 'center',
-    backgroundColor: Colors.brandPrimary,
+    backgroundColor: Colors.blueGrey,
     bottom: 0,
     flexDirection: 'row',
     height: 80,
