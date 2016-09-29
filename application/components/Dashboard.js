@@ -3,8 +3,8 @@ import { TabBarIOS } from 'react-native';
 import { TabBarItemIOS } from 'react-native-vector-icons/Ionicons';
 
 import TrainingView from './activity/TrainingView';
-import MessagesView from './activity/MessagesView';
-import ProfileView from './activity/ProfileView';
+import MessagesView from './messages/MessagesView';
+import ProfileView from './profile/ProfileView';
 
 class Dashboard extends Component{
   constructor(){
