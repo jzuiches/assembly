@@ -11,12 +11,13 @@ import Icon from 'react-native-vector-icons/Ionicons';
 import NavigationBar from 'react-native-navbar';
 import Colors from '../../styles/colors';
 import { globals, profileStyles } from '../../styles';
-import { currentUser } from '../../fixtures';
+import { currentUser, FakeUsers } from '../../fixtures';
 const styles = profileStyles;
 
 
 class ProfileView extends Component {
   render(){
+    console.log("CURRENTUSER", currentUser.avatar);
     let titleConfig = {title: 'Profile', tintColor: 'white'};
     return (
       <View style={ [globals.flexContainer, globals.inactive] }>
@@ -28,8 +29,8 @@ class ProfileView extends Component {
             <View style={styles.flexRow}>
             <TouchableOpacity style={[globals.flexCenter, globals.pv1]}>
             <Image
-            source={{uri: currentUser.avatar}}
-            stlye={styles.avatar}
+            style={styles.avatar}
+            source={require("../../assets/images/React.js_logo.svg.png")}
             />
             </TouchableOpacity>
             <View style={styles.infoContainer}>
