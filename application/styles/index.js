@@ -703,7 +703,7 @@ export const globals = StyleSheet.create({
   },
   map: {
     backgroundColor: Colors.inactive,
-    height: (deviceHeight / 3),
+    height: (deviceHeight / 4),
     width: deviceWidth
   },
   flexRow: {
