@@ -18,6 +18,16 @@ import Login from './application/components/accounts/Login';
 
 
  class assemblies extends Component {
+   constructor(){
+     super();
+     this.updateUser =this.updateUser.bind(this);
+     this.state= {
+       user: null
+     };
+   }
+   updateUser(user){
+     this.setState({ user: user });
+   }
    render() {
      return (
        <Navigator
@@ -31,15 +41,30 @@ import Login from './application/components/accounts/Login';
            );
            case 'Dashboard':
            return (
-                <Dashboard navigator={navigator}/>
+                <Dashboard
+                updateUser={this.updateUser}
+                navigator={navigator}
+                user={this.state.user}
+                />
            );
            case 'Register':
            return (
              <Register navigator={navigator}/>
            );
+           case 'RegisterConfirmation':
+           return (
+             <RegisterConfirmation
+             {...route}
+             updateUser={this.updateUser}
+             navigator={navigator}
+             />
+           );
            case 'Login':
            return (
-             <Login navigator={navigator}/>
+             <Login
+             navigator={navigator}
+             updateUser={this.updateUser}
+             />
            );
          }
        }}

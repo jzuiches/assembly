@@ -11,13 +11,14 @@ import Icon from 'react-native-vector-icons/Ionicons';
 import NavigationBar from 'react-native-navbar';
 import Colors from '../../styles/colors';
 import { globals, profileStyles } from '../../styles';
-import { currentUser, FakeUsers } from '../../fixtures';
+// import { FakeUsers } from '../../fixtures';
+
 const styles = profileStyles;
 
 
 class ProfileView extends Component {
   render(){
-    console.log("CURRENTUSER", currentUser.avatar);
+    let { currentUser } = this.props;
     let titleConfig = {title: 'Profile', tintColor: 'white'};
     return (
       <View style={ [globals.flexContainer, globals.inactive] }>
@@ -38,7 +39,7 @@ class ProfileView extends Component {
                 {currentUser.firstName} {currentUser.lastName}
                 </Text>
                 <Text style={globals.h5}>
-                {currentUser.location.city.long_name}, {currentUser.location.state.short_name}
+                {currentUser.location}, {currentUser.location}
                 </Text>
             </View>
       </View>
