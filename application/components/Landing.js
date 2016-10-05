@@ -7,35 +7,33 @@ import {
   TouchableOpacity
  } from 'react-native';
 
-
 import { landingStyles } from '../styles';
 import Colors from '../styles/colors';
 import { globals } from '../styles';
 
-
-const BackgroundImage = 'https://s3-us-west-2.amazonaws.com/assembliesapp/welcome%402x.png';
-const Logo = 'https://s3-us-west-2.amazonaws.com/assembliesapp/logo.png';
 const styles = landingStyles;
 
 class Landing extends Component{
 
   constructor(){
     super();
-    this.visitDashboard = this.visitDashboard.bind(this);
+    this.visitLogin = this.visitLogin.bind(this);
+    this.visitRegister = this.visitRegister.bind(this);
   }
-  visitDashboard(){
+  visitLogin(){
     this.props.navigator.push({
-      name: 'Dashboard'
+      name: 'Login'
     });
   }
-
+  visitRegister(){
+    this.props.navigator.push({
+      name: 'Register'
+    });
+  }
   render(){
-
     return(
       <View style={styles.container}>
-      <View style={styles.container}>
-
-      </View>
+  
         <View style={globals.flexCenter}>
         <Image
           style={styles.logo}
@@ -49,15 +47,23 @@ class Landing extends Component{
         </Text>
       </View>
       <TouchableOpacity
-         style={globals.button}
-         onPress={this.visitDashboard}
+         style={[globals.button, globals.inactive, styles.loginButton]}
+         onPress={this.visitLogin}
        >
-         <Icon name='person' size={36} color='white' />
-         <Text style={globals.buttonText}>
-           Go to Training Divisions
+         <Icon name='lock' size={36} color={Colors.brandPrimary} />
+         <Text style={globals.buttonText, globals.primaryText}>
+           Login
          </Text>
        </TouchableOpacity>
-
+       <TouchableOpacity
+          style={globals.button}
+          onPress={this.visitRegister}
+        >
+            <Icon name='person' size={36} color='white' />
+            <Text style={globals.buttonText}>
+            Create an Account
+            </Text>
+            </TouchableOpacity>
       </View>
     )
   }
