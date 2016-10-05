@@ -11,10 +11,11 @@ class Dashboard extends Component{
     super();
     this.state = {
       selectedTab: 'Training'
-    }
+    };
   }
 
   render(){
+    let { user } = this.props;
     return (
     <TabBarIOS>
       <TabBarItemIOS
@@ -23,7 +24,7 @@ class Dashboard extends Component{
           selected={this.state.selectedTab === "Training"}
           onPress={() => this.setState({ selectedTab: 'Training'})}
         >
-        <TrainingView/>
+        <TrainingView currentUser={user}/>
         </TabBarItemIOS>
 
       <TabBarItemIOS
@@ -32,7 +33,7 @@ class Dashboard extends Component{
           selected={this.state.selectedTab === 'Messages'}
           onPress={() => this.setState({ selectedTab: 'Messages'})}
         >
-        <MessagesView/>
+        <MessagesView currentUser={user}/>
         </TabBarItemIOS>
 
       <TabBarItemIOS
@@ -41,7 +42,7 @@ class Dashboard extends Component{
          selected={this.state.selectedTab === 'Profile'}
          onPress={() => this.setState({ selectedTab: 'Profile'})}
        >
-       <ProfileView/>
+       <ProfileView currentUser={user}/>
        </TabBarItemIOS>
 
      </TabBarIOS>
